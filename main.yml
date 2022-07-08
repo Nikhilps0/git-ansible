@@ -9,7 +9,8 @@
         
   tasks:
     
-    
+
+
     - name: "Apache - package Installation"
       yum:
         name: httpd
@@ -89,7 +90,15 @@
         name: ""
         state: absent
         host_all: true
-            
+        
+    - name: coping .my.cnf file with root password credentials to both servers
+      template: 
+       src: my.cnf.j2
+       dest: /root/.my.cnf
+       owner: root
+       mode: 0600
+
+
     - name: "Mariadb-Server - Creating Database {{ mysql_extra_database }}"
       mysql_db:
         login_user: "root"
