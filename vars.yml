@@ -9,3 +9,4 @@ httpd_user: "apache"
 httpd_group: "apache"
 domain_name: "blog.nikhilps.tk"
 wp_url: "https://wordpress.org/wordpress-5.8.4.tar.gz"
+php_upload_size: 20mb
